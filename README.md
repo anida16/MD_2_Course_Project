@@ -1,4 +1,4 @@
-# MD_2_Course_Project
+# MD_2_Course_Project: Automatic Designing of Flange Coupler using Python
 
 When designing Flange Couplers is considered, it involves a lot of basic mathematical operations that are time-consuming and are doomed for mistakes as, in the end, human error is evident. 
 
