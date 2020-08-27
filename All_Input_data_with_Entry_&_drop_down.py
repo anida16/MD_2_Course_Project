@@ -25,7 +25,7 @@ from tkinter import *  # from tkinter import *
 #############################################################################################
 
 root = Tk()
-root.title("Material Selection")
+root.title("Input required Data for Designing")
 
 # Add a grid
 mainframe = Frame(root)
@@ -54,21 +54,41 @@ popupMenu_mat_des = OptionMenu(mainframe, tkvar1, *mat_des)
 popupMenu_mat_cond = OptionMenu(mainframe, tkvar2, *mat_cond)
 popupMenu_mat_flang = OptionMenu(mainframe, tkvar3, *mat_flang)
 
-Label(mainframe, text="Choose Material Designation for Shaft/Bolt/Keys").grid(row = 1, column = 1) #controls position of name of popup grid
-popupMenu_mat_des.grid(row = 1, column =2) #controls position of popup grid
+Label(mainframe, text="Enter Power").grid(row = 1, column = 1)
+entry1 = tk.Entry (mainframe) #power
+entry1.grid(row=1, column=2)
 
-Label(mainframe, text="Choose Material Condition for Shaft/Bolt/Keys").grid(row = 2, column = 1) #controls position of name of popup grid
-popupMenu_mat_cond.grid(row = 2, column =2) #controls position of popup grid
+Label(mainframe, text="Enter Speed").grid(row = 2, column = 1)
+entry2 = tk.Entry (mainframe) #speed
+entry2.grid(row=2, column=2)
 
-Label(mainframe, text="Choose Material Designation for Flange").grid(row = 3, column = 1) #controls position of name of popup grid
-popupMenu_mat_flang.grid(row = 3, column =2) #controls position of popup grid
+Label(mainframe, text="Enter FoS for Shaft").grid(row = 3, column = 1)
+entry3 = tk.Entry (mainframe) #FoS for Shaft
+entry3.grid(row=3, column=2)
 
+Label(mainframe, text="Enter FoS for Flange").grid(row = 4, column = 1)
+entry4 = tk.Entry (mainframe) #FoS for Flange
+entry4.grid(row=4, column=2)
+
+Label(mainframe, text="Enter FoS for Key & Bolt").grid(row = 5, column = 1)
+entry5 = tk.Entry (mainframe) #FoS for Key & Bolt
+entry5.grid(row=5, column=2)
+
+Label(mainframe, text="Enter Service Factor").grid(row = 6, column = 1)
+entry6 = tk.Entry (mainframe) #Service Factor
+entry6.grid(row=6, column=2)
+
+Label(mainframe, text="Choose Material Designation for Shaft/Bolt/Keys").grid(row = 7, column = 1) #controls position of name of popup grid
+popupMenu_mat_des.grid(row = 7, column =2) #controls position of popup grid
+
+Label(mainframe, text="Choose Material Condition for Shaft/Bolt/Keys").grid(row = 8, column = 1) #controls position of name of popup grid
+popupMenu_mat_cond.grid(row = 8, column =2) #controls position of popup grid
+
+Label(mainframe, text="Choose Material Designation for Flange").grid(row = 9, column = 1) #controls position of name of popup grid
+popupMenu_mat_flang.grid(row = 9, column =2) #controls position of popup grid
 
 b1 = tk.Button(mainframe,  text='Submit', command=lambda: my_show() )  
-b1.grid(row=4,column=1) 
-
-entry1 = tk.Entry (mainframe)
-entry1.grid(row=5, column=1)
+b1.grid(row=10,column=1) 
 
 str_out=tk.StringVar(root)
 str_out.set("Output")
@@ -225,8 +245,29 @@ def my_show():
     print(" Yield Strength of Flange is ",Yield_Flange)
     ##########################################################################
 
-    x1 = entry1.get()
-    print(x1)
+    Power = entry1.get()
+    print(Power)
+
+    Speed = entry2.get()
+    print(Speed)
+
+    FoS_Shaft = entry3.get()
+    print(FoS_Shaft)
+
+    FoS_Flange = entry4.get()
+    print(FoS_Flange)
+
+    FoS_Bolt = entry5.get()
+    print(FoS_Bolt)
+
+    Service_factor = entry6.get()
+    print(Service_factor)
+
+    ##########################################################################
+
+    #Calculations start here
+    
+
 
 
 

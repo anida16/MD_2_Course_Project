@@ -9,67 +9,70 @@ class RangeDict(dict):
             return super().__getitem__(item) # or super(RangeDict, self) for Python 2
 
 #dont touch above
+import math
 
 
-Diameter_of_Shaft = 55 #comes from test of shearing of shaft
+Float_Diameter_of_Shaft = 58.1
+Diameter_of_Shaft = math.ceil(Float_Diameter_of_Shaft/ 2.) * 2
+print(Diameter_of_Shaft)
 
 width_check = RangeDict({
-    range(6,8): 2, 
-    range(9,10): 3,
-    range(11,12): 4, 
-    range(13,17): 5,
-    range(18,22): 6, 
-    range(23,30): 8,
-    range(31,38): 10, 
-    range(39,44): 12,
-    range(45,50): 14, 
-    range(51,58): 16,
-    range(59,65): 18, 
-    range(66,75): 20,
-    range(76,85): 22, 
-    range(86,95): 25,
-    range(96,110): 28, 
-    range(111,130): 32,
-    range(131,150): 36, 
-    range(151,170): 40,
-    range(171,200): 45, 
-    range(201,230): 50,
-    range(231,260): 56, 
-    range(261,290): 63,
-    range(291,330): 70, 
-    range(331,380): 80,
-    range(381,440): 90, 
-    range(441,500): 100
+    range(6,9): 2, 
+    range(9,11): 3,
+    range(11,13): 4, 
+    range(13,18): 5,
+    range(18,23): 6, 
+    range(23,31): 8,
+    range(31,39): 10, 
+    range(39,45): 12,
+    range(45,51): 14, 
+    range(51,59): 16,
+    range(59,66): 18, 
+    range(66,76): 20,
+    range(76,86): 22, 
+    range(86,96): 25,
+    range(96,111): 28, 
+    range(111,131): 32,
+    range(131,151): 36, 
+    range(151,171): 40,
+    range(171,201): 45, 
+    range(201,231): 50,
+    range(231,261): 56, 
+    range(261,291): 63,
+    range(291,331): 70, 
+    range(331,381): 80,
+    range(381,441): 90, 
+    range(441,501): 100
     })
 width_key = width_check[Diameter_of_Shaft]
 
 height_check = RangeDict({
-    range(6,8): 2, 
-    range(9,10): 3,
-    range(11,12): 4, 
-    range(13,17): 5,
-    range(18,22): 6, 
-    range(23,30): 7,
-    range(31,38): 8, 
-    range(39,44): 8,
-    range(45,50): 9, 
-    range(51,58): 10,
-    range(59,65): 11, 
-    range(66,75): 12,
-    range(76,85): 14, 
-    range(86,95): 14,
-    range(96,110): 16, 
-    range(111,130): 18,
-    range(131,150): 20, 
-    range(151,170): 22,
-    range(171,200): 25, 
-    range(201,230): 28,
-    range(231,260): 32, 
-    range(261,290): 32,
-    range(291,330): 36, 
-    range(331,380): 40,
-    range(381,440): 45, 
-    range(441,500): 50
+    range(6,9): 2, 
+    range(9,11): 3,
+    range(11,13): 4, 
+    range(13,18): 5,
+    range(18,23): 6, 
+    range(23,31): 7,
+    range(31,39): 8, 
+    range(39,45): 8,
+    range(45,51): 9, 
+    range(51,59): 10,
+    range(59,66): 11, 
+    range(66,76): 12,
+    range(76,86): 14, 
+    range(86,96): 14,
+    range(96,111): 16, 
+    range(111,131): 18,
+    range(131,151): 20, 
+    range(151,171): 22,
+    range(171,201): 25, 
+    range(201,231): 28,
+    range(231,261): 32, 
+    range(261,291): 32,
+    range(291,331): 36, 
+    range(331,381): 40,
+    range(381,441): 45, 
+    range(441,501): 50
     })
 height_key = height_check[Diameter_of_Shaft]
 
