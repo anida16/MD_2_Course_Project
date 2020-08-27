@@ -396,6 +396,23 @@ def my_show():
     #print(Service_factor)
 
     ##########################################################################
+    #Incase Not Availiable Error, print this:
+    if Yield_Bolt  == "Not Available" or Yield_Shaft == "Not Available":
+        root_4 = Tk()
+        root_4.title("Error")
+
+        mainframe4 = Frame(root_4)
+        mainframe4.grid(column=0,row=0, sticky=(N,W,E,S) )
+        mainframe4.columnconfigure(0, weight = 1)
+        mainframe4.rowconfigure(0, weight = 1)
+        mainframe4.pack(pady = 60, padx = 50) #controls fixed gap inbetween main content and edges, pady for y padx for x
+
+        Label(mainframe4, text="Error    :").grid(row = 1, column = 1)
+        Label(mainframe4, text="Material combination Specified has no Data Availiable in PSG Design Data Book").grid(row = 1, column = 2)
+
+        root_4.mainloop()
+
+
 
     #Calculations start here
     #Permissible stresses
@@ -619,7 +636,7 @@ def my_show():
                             Label(mainframe2, text="Thickness of Flange ").grid(row = 14, column = 1)
                             Label(mainframe2, text=0.5 * Diameter_of_Shaft).grid(row = 14, column = 2)
                             Label(mainframe2, text="  ").grid(row = 15, column = 1)
-                        
+
                             root_3 = Tk()
                             root_3.title("Result of Testing")
 
@@ -659,6 +676,7 @@ def my_show():
 
 
                             root_2.mainloop()
+                            root_3.mainloop()
 
                         
 
