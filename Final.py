@@ -13,25 +13,31 @@ class RangeDict(dict):
         else:
             return super().__getitem__(item) # or super(RangeDict, self) for Python 2
 
+def range_index(table, val):
+    for (k1, k2) in table:
+        if k1 <= val < k2:
+            return table[(k1, k2)]
 
 #from ttk import * 
 
-root = Tk()
-root.title("Input required Data for Designing")
+root_1 = Tk()
+root_1.title("Input required Data for Designing")
 
-# Add a grid
-mainframe = Frame(root)
-mainframe.grid(column=0,row=0, sticky=(N,W,E,S) )
-mainframe.columnconfigure(0, weight = 1)
-mainframe.rowconfigure(0, weight = 1)
-mainframe.pack(pady = 60, padx = 50) #controls fixed gap inbetween main content and edges, pady for y padx for x
+
+# Add a grid for Input
+mainframe1 = Frame(root_1)
+mainframe1.grid(column=0,row=0, sticky=(N,W,E,S) )
+mainframe1.columnconfigure(0, weight = 1)
+mainframe1.rowconfigure(0, weight = 1)
+mainframe1.pack(pady = 60, padx = 50) #controls fixed gap inbetween main content and edges, pady for y padx for x
+
 
 # Create a Tkinter variable
-tkvar1 = StringVar(root) #this is where value selected by user is stored #Material Designation
-tkvar2 = StringVar(root) #this is where value selected by user is stored #Condition
-tkvar3 = StringVar(root)
-tkvar4 = StringVar(root)
-tkvar5 = StringVar(root) 
+tkvar1 = StringVar(root_1) #this is where value selected by user is stored #Material Designation
+tkvar2 = StringVar(root_1) #this is where value selected by user is stored #Condition
+tkvar3 = StringVar(root_1)
+tkvar4 = StringVar(root_1)
+tkvar5 = StringVar(root_1) 
 
 # Dictionary with options
 
@@ -44,55 +50,55 @@ mat_flang = ['GCI 15','GCI 20','GCI 25','MCI B', 'MCI A']
 
 #tkvar1.set('C 40') # set the default option
 
-popupMenu_mat_des = OptionMenu(mainframe, tkvar1, *mat_des)
-popupMenu_mat_cond = OptionMenu(mainframe, tkvar2, *mat_cond)
-popupMenu_mat_des2 = OptionMenu(mainframe, tkvar4, *mat_des)
-popupMenu_mat_cond2 = OptionMenu(mainframe, tkvar5, *mat_cond)
-popupMenu_mat_flang = OptionMenu(mainframe, tkvar3, *mat_flang)
+popupMenu_mat_des = OptionMenu(mainframe1, tkvar1, *mat_des)
+popupMenu_mat_cond = OptionMenu(mainframe1, tkvar2, *mat_cond)
+popupMenu_mat_des2 = OptionMenu(mainframe1, tkvar4, *mat_des)
+popupMenu_mat_cond2 = OptionMenu(mainframe1, tkvar5, *mat_cond)
+popupMenu_mat_flang = OptionMenu(mainframe1, tkvar3, *mat_flang)
 
-Label(mainframe, text="Enter Power").grid(row = 1, column = 1)
-entry1 = tk.Entry (mainframe) #power
+Label(mainframe1, text="Enter Power").grid(row = 1, column = 1)
+entry1 = tk.Entry (mainframe1) #power
 entry1.grid(row=1, column=2)
 
-Label(mainframe, text="Enter Speed").grid(row = 2, column = 1)
-entry2 = tk.Entry (mainframe) #speed
+Label(mainframe1, text="Enter Speed").grid(row = 2, column = 1)
+entry2 = tk.Entry (mainframe1) #speed
 entry2.grid(row=2, column=2)
 
-Label(mainframe, text="Enter FoS for Shaft").grid(row = 3, column = 1)
-entry3 = tk.Entry (mainframe) #FoS for Shaft
+Label(mainframe1, text="Enter FoS for Shaft").grid(row = 3, column = 1)
+entry3 = tk.Entry (mainframe1) #FoS for Shaft
 entry3.grid(row=3, column=2)
 
-Label(mainframe, text="Enter FoS for Flange").grid(row = 4, column = 1)
-entry4 = tk.Entry (mainframe) #FoS for Flange
+Label(mainframe1, text="Enter FoS for Flange").grid(row = 4, column = 1)
+entry4 = tk.Entry (mainframe1) #FoS for Flange
 entry4.grid(row=4, column=2)
 
-Label(mainframe, text="Enter FoS for Key & Bolt").grid(row = 5, column = 1)
-entry5 = tk.Entry (mainframe) #FoS for Key & Bolt
+Label(mainframe1, text="Enter FoS for Key & Bolt").grid(row = 5, column = 1)
+entry5 = tk.Entry (mainframe1) #FoS for Key & Bolt
 entry5.grid(row=5, column=2)
 
-Label(mainframe, text="Enter Service Factor").grid(row = 6, column = 1)
-entry6 = tk.Entry (mainframe) #Service Factor
+Label(mainframe1, text="Enter Service Factor").grid(row = 6, column = 1)
+entry6 = tk.Entry (mainframe1) #Service Factor
 entry6.grid(row=6, column=2)
 
-Label(mainframe, text="Choose Material Designation for Shaft").grid(row = 7, column = 1) #controls position of name of popup grid
+Label(mainframe1, text="Choose Material Designation for Shaft").grid(row = 7, column = 1) #controls position of name of popup grid
 popupMenu_mat_des.grid(row = 7, column =2) #controls position of popup grid
 
-Label(mainframe, text="Choose Material Condition for Shaft").grid(row = 8, column = 1) #controls position of name of popup grid
+Label(mainframe1, text="Choose Material Condition for Shaft").grid(row = 8, column = 1) #controls position of name of popup grid
 popupMenu_mat_cond.grid(row = 8, column =2) #controls position of popup grid
 
-Label(mainframe, text="Choose Material Designation for Key & Bolt").grid(row = 9, column = 1) #controls position of name of popup grid
+Label(mainframe1, text="Choose Material Designation for Key & Bolt").grid(row = 9, column = 1) #controls position of name of popup grid
 popupMenu_mat_des2.grid(row = 9, column =2) #controls position of popup grid
 
-Label(mainframe, text="Choose Material Condition for Key & Bolt").grid(row = 10, column = 1) #controls position of name of popup grid
+Label(mainframe1, text="Choose Material Condition for Key & Bolt").grid(row = 10, column = 1) #controls position of name of popup grid
 popupMenu_mat_cond2.grid(row = 10, column =2) #controls position of popup grid
 
-Label(mainframe, text="Choose Material Designation for Flange").grid(row = 11, column = 1) #controls position of name of popup grid
+Label(mainframe1, text="Choose Material Designation for Flange").grid(row = 11, column = 1) #controls position of name of popup grid
 popupMenu_mat_flang.grid(row = 11, column =2) #controls position of popup grid
 
-b1 = tk.Button(mainframe,  text='Submit', command=lambda: my_show() )  
+b1 = tk.Button(mainframe1,  text='Submit', command=lambda: my_show() )  
 b1.grid(row=12,column=1) 
 
-str_out=tk.StringVar(root)
+str_out=tk.StringVar(root_1)
 str_out.set("Output")
 
 
@@ -397,6 +403,7 @@ def my_show():
     Shear_Shaft = (0.5*Yield_Shaft)/float(FoS_Shaft)
     Shear_Flange = (0.5*Yield_Flange)/float(FoS_Flange)
     Shear_Bolt = (0.5*Yield_Bolt)/float(FoS_Bolt)
+    Crush_Bolt = (1.5 * Yield_Bolt)/float(FoS_Bolt)
     #print(Shear_Bolt)
     #print(Shear_Flange)
     #print(Shear_Shaft)
@@ -482,8 +489,151 @@ def my_show():
     print("Height of Key is",height_key) # prints height
     print("Length of Key is",length_key) # prints length
 
+    counter = 0
+    while True:
+        if counter != 0:
+            Diameter_of_Shaft = 1.05 * Diameter_of_Shaft
 
-root.mainloop()
+        # check for shear in key
+        shearStress = (Max_Torque * 2) / (width_key * length_key * Diameter_of_Shaft)
+        print("Shearing of key is ",shearStress)
+        if shearStress > (Shear_Bolt):
+            print("Fail 1")
+            counter += 1
+            continue
+        else:  # crushing test for key
+            crushStress = (4 * Max_Torque) / (height_key * length_key * Diameter_of_Shaft)
+            print("Compress stress needed to Compress Key is ",crushStress)
+            if crushStress > (Crush_Bolt):
+                print("Fail 2")
+                counter += 1
+                continue
+            else:
+                # dimensions for hub
+                hubOD = 2 * Diameter_of_Shaft  # since, shaft dia= inner dia of hub
+                # shear stress test for hub #PSG 7.135
+                shearStress_hub = (16 * Max_Torque * hubOD) / (np.pi * (pow(hubOD, 4) - pow(Diameter_of_Shaft, 4)))
+                print("Torsional Shear of Hub is ",shearStress_hub)
+                if shearStress_hub > Shear_Flange:
+                    print("Fail 3")
+                    counter += 1
+                    continue
+                else:
+                    # dimension of flange
+                    flangeThick = 0.5 * Diameter_of_Shaft
+                    # shear stress for flange
+                    shearStress_flang = (2 * Max_Torque) / (np.pi * pow(hubOD, 2) * flangeThick)
+                    print("Shear stress needed to shear flange is ", shearStress_flang)
+                    if shearStress_flang > Shear_Flange:
+                        print("Fail 4")
+                        counter += 1
+                        continue
+                    else:
+                        # dimensions of the bolt
+                        pitchDia = 3 * Diameter_of_Shaft
+                        if Diameter_of_Shaft < 40:
+                            n = 3
+                        if Diameter_of_Shaft >= 40 and Diameter_of_Shaft < 100:
+                            n = 4
+                        if Diameter_of_Shaft >= 100 and Diameter_of_Shaft < 180:
+                            n = 6
+                            
+                        d1 = math.sqrt((8 * Max_Torque) / (np.pi * Shear_Bolt * n * pitchDia))
+                        #print(d1)
+                        #print(n)
+                        #print(pitchDia)
+                        #print(Max_Torque)
+                        #print(Shear_Bolt)
+
+                        #PSG 5.42
+                        Bolt_check = ({
+                        (1,2.208): 2.5,
+                        (2.208,2.675): 3, 
+                        (2.675,3.545): 4,
+                        (3.545,4.48): 5,
+                        (4.48,5.35): 6,
+                        (5.35,7.188): 8,
+                        (7.188,9.026): 10, 
+                        (9.026,10.863): 12,
+                        (10.863,14.701): 16,
+                        (14.701, 18.376): 20,
+                        (18.376,22.051): 24, 
+                        (22.051,27.727): 30,
+                        (27.727,30.727): 33,
+                        (30.727, 33.402): 36
+                        })
+
+                        Diameter_of_bolt = range_index(Bolt_check, d1)
+                        print("We are Selecting bolt - M",Diameter_of_bolt)    
+
+                        #compressive failure of bolts
+                        compress_fail = ((2 * Max_Torque)/(pitchDia * n * Diameter_of_bolt * flangeThick))    
+                        
+                        print("Compress stress needed to Compress Bolt is ", compress_fail)
+                        if compress_fail > Crush_Bolt:
+                            print("Fail 5")
+                            counter += 1
+                            continue       
+                        else:
+                            print("Sucessfully completed all Tests")
+                            # Add a grid for Output
+
+                            root_2 = Tk()
+                            root_2.title("Result")
+
+                            mainframe2 = Frame(root_2)
+                            mainframe2.grid(column=0,row=0, sticky=(N,W,E,S) )
+                            mainframe2.columnconfigure(0, weight = 1)
+                            mainframe2.rowconfigure(0, weight = 1)
+                            mainframe2.pack(pady = 60, padx = 50) #controls fixed gap inbetween main content and edges, pady for y padx for x
+
+                            Label(mainframe2, text="Diameter of Shaft is").grid(row = 1, column = 1)
+                            Label(mainframe2, text=Diameter_of_Shaft).grid(row = 1, column = 2)
+                            Label(mainframe2, text="Width of Key is ").grid(row = 2, column = 1)
+                            Label(mainframe2, text=width_key).grid(row = 2, column = 2)
+                            Label(mainframe2, text="Height of Key is ").grid(row = 3, column = 1)
+                            Label(mainframe2, text=height_key).grid(row = 3, column = 2)
+                            Label(mainframe2, text="Length of Key is ").grid(row = 4, column = 1)
+                            Label(mainframe2, text=length_key).grid(row = 4, column = 2)
+
+                            Label(mainframe2, text="Compress stress needed to Compress Key is    ").grid(row = 5, column = 1)
+                            Label(mainframe2, text=crushStress    ).grid(row = 5, column = 2)
+                            Label(mainframe2, text="   which is less than    ").grid(row = 5, column = 3)
+                            Label(mainframe2, text=Crush_Bolt).grid(row = 5, column = 4)
+
+                            Label(mainframe2, text="Shearing of key is      ").grid(row = 6, column = 1)
+                            Label(mainframe2, text=shearStress    ).grid(row = 6, column = 2)
+                            Label(mainframe2, text="   which is less than    ").grid(row = 6, column = 3)
+                            Label(mainframe2, text=Shear_Bolt).grid(row = 6, column = 4)
+
+                            Label(mainframe2, text="Torsional Shear of Hub is     ").grid(row = 7, column = 1)
+                            Label(mainframe2, text=shearStress_hub    ).grid(row = 7, column = 2)
+                            Label(mainframe2, text="   which is less than    ").grid(row = 7, column = 3)
+                            Label(mainframe2, text=Shear_Flange).grid(row = 7, column = 4) 
+
+                            Label(mainframe2, text="Shear stress needed to shear flange is     ").grid(row = 8, column = 1)
+                            Label(mainframe2, text=shearStress_flang    ).grid(row = 8, column = 2)
+                            Label(mainframe2, text="   which is less than    ").grid(row = 8, column = 3)
+                            Label(mainframe2, text=Shear_Flange).grid(row = 8, column = 4)
+
+                            Label(mainframe2, text="Compress stress needed to Compress Bolt is      ").grid(row = 9, column = 1)
+                            Label(mainframe2, text=compress_fail    ).grid(row = 9, column = 2)
+                            Label(mainframe2, text="   which is less than    ").grid(row = 9, column = 3)
+                            Label(mainframe2, text=Crush_Bolt).grid(row = 9, column = 4)
+
+                            Label(mainframe2, text="Sucessfully completed all Tests").grid(row = 10, column = )
+
+
+
+                            root_2.mainloop()
+
+                        
+
+
+        break
+
+root_1.mainloop()
+
 
 #print("dict of Shaft is",my_dict[Diameter_of_Shaft]) # prints height
 #print my_dict.get(argument, "Invalid month")
