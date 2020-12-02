@@ -608,33 +608,52 @@ def my_show():
 
                             Label(mainframe2, text="Diameter of Shaft is").grid(row = 1, column = 1)
                             Label(mainframe2, text=Diameter_of_Shaft).grid(row = 1, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 1, column = 3)
 
                             Label(mainframe2, text="Width of Key is ").grid(row = 2, column = 1)
                             Label(mainframe2, text=width_key).grid(row = 2, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 2, column = 3)
+
                             Label(mainframe2, text="Height of Key is ").grid(row = 3, column = 1)
                             Label(mainframe2, text=height_key).grid(row = 3, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 3, column = 3)
+
                             Label(mainframe2, text="Length of Key is ").grid(row = 4, column = 1)
                             Label(mainframe2, text=length_key).grid(row = 4, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 4, column = 3)
+
                             Label(mainframe2, text="  ").grid(row = 5, column = 1)
 
                             Label(mainframe2, text="Diameter of Hub  ").grid(row = 6, column = 1)
                             Label(mainframe2, text=2 * Diameter_of_Shaft).grid(row = 6, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 6, column = 3)
+
                             Label(mainframe2, text="Thickness of Hub  ").grid(row = 7, column = 1)
                             Label(mainframe2, text=1.5 * Diameter_of_Shaft).grid(row = 7, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 7, column = 3)
+
                             Label(mainframe2, text="  ").grid(row = 8, column = 1)
 
-                            Label(mainframe2, text="PCB of Flange for Bolt Holes ").grid(row = 9, column = 1)
+                            Label(mainframe2, text="PCD of Flange for Bolt Holes ").grid(row = 9, column = 1)
                             Label(mainframe2, text=3 * Diameter_of_Shaft).grid(row = 9, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 9, column = 3)
+
                             Label(mainframe2, text="Diameter of Bolts ").grid(row = 10, column = 1)
                             Label(mainframe2, text=Designation_of_Bolt).grid(row = 10, column = 2)
+
                             Label(mainframe2, text="Number of Bolts ").grid(row = 11, column = 1)
                             Label(mainframe2, text=n).grid(row = 11, column = 2)
+
                             Label(mainframe2, text="  ").grid(row = 12, column = 1)
 
                             Label(mainframe2, text="Diameter of Flange ").grid(row = 13, column = 1)
                             Label(mainframe2, text=4 * Diameter_of_Shaft).grid(row = 13, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 13, column = 3)
+
                             Label(mainframe2, text="Thickness of Flange ").grid(row = 14, column = 1)
                             Label(mainframe2, text=0.5 * Diameter_of_Shaft).grid(row = 14, column = 2)
+                            Label(mainframe2, text="mm").grid(row = 14, column = 3)
+
                             Label(mainframe2, text="  ").grid(row = 15, column = 1)
 
                             root_3 = Tk()
@@ -647,31 +666,41 @@ def my_show():
                             mainframe3.pack(pady = 60, padx = 50) #controls fixed gap inbetween main content and edges, pady for y padx for x
 
                             Label(mainframe3, text="Compress stress needed to Compress Key is    ").grid(row = 1, column = 1)
-                            Label(mainframe3, text=crushStress    ).grid(row = 1, column = 2)
-                            Label(mainframe3, text="   which is less than    ").grid(row = 1, column = 3)
-                            Label(mainframe3, text=Crush_Bolt).grid(row = 1, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(crushStress)).grid(row = 1, column = 2)
+                            Label(mainframe3, text="N/mm2    ").grid(row = 1, column = 3)
+                            Label(mainframe3, text="   which is less than    ").grid(row = 1, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(Crush_Bolt)).grid(row = 1, column = 5)
+                            Label(mainframe3, text="N/mm2").grid(row = 1, column = 6)
 
                             Label(mainframe3, text="Shearing of key is      ").grid(row = 2, column = 1)
-                            Label(mainframe3, text=shearStress    ).grid(row = 2, column = 2)
-                            Label(mainframe3, text="   which is less than    ").grid(row = 2, column = 3)
-                            Label(mainframe3, text=Shear_Bolt).grid(row = 2, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(shearStress)).grid(row = 2, column = 2)
+                            Label(mainframe3, text="N/mm2    ").grid(row = 2, column = 3)
+                            Label(mainframe3, text="   which is less than    ").grid(row = 2, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(Shear_Bolt)).grid(row = 2, column = 5)
+                            Label(mainframe3, text="N/mm2").grid(row = 2, column = 6)
 
                             Label(mainframe3, text="Torsional Shear of Hub is     ").grid(row = 3, column = 1)
-                            Label(mainframe3, text=shearStress_hub    ).grid(row = 3, column = 2)
-                            Label(mainframe3, text="   which is less than    ").grid(row = 3, column = 3)
-                            Label(mainframe3, text=Shear_Flange).grid(row = 3, column = 4) 
+                            Label(mainframe3, text="{:.2f}".format(shearStress_hub)).grid(row = 3, column = 2)
+                            Label(mainframe3, text="N/mm2    ").grid(row = 3, column = 3)
+                            Label(mainframe3, text="   which is less than    ").grid(row = 3, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(Shear_Flange)).grid(row = 3, column = 5) 
+                            Label(mainframe3, text="N/mm2").grid(row = 3, column = 6)
 
                             Label(mainframe3, text="Shear stress needed to shear flange is     ").grid(row = 4, column = 1)
-                            Label(mainframe3, text=shearStress_flang    ).grid(row = 4, column = 2)
-                            Label(mainframe3, text="   which is less than    ").grid(row = 4, column = 3)
-                            Label(mainframe3, text=Shear_Flange).grid(row = 4, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(shearStress_flang)).grid(row = 4, column = 2)
+                            Label(mainframe3, text="N/mm2    ").grid(row = 4, column = 3)
+                            Label(mainframe3, text="   which is less than    ").grid(row = 4, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(Shear_Flange)).grid(row = 4, column = 5)
+                            Label(mainframe3, text="N/mm2").grid(row = 4, column = 6)
 
                             Label(mainframe3, text="Compress stress needed to Compress Bolt is      ").grid(row = 5, column = 1)
-                            Label(mainframe3, text=compress_fail    ).grid(row = 5, column = 2)
-                            Label(mainframe3, text="   which is less than    ").grid(row = 5, column = 3)
-                            Label(mainframe3, text=Crush_Bolt).grid(row = 5, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(compress_fail)).grid(row = 5, column = 2)
+                            Label(mainframe3, text="N/mm2    ").grid(row = 5, column = 3)
+                            Label(mainframe3, text="   which is less than    ").grid(row = 5, column = 4)
+                            Label(mainframe3, text="{:.2f}".format(Crush_Bolt)).grid(row = 5, column = 5)
+                            Label(mainframe3, text="N/mm2").grid(row = 5, column = 6)
 
-                            Label(mainframe3, text="Sucessfully completed all Tests").grid(row = 6, column = 2)
+                        
 
 
 
